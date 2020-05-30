@@ -18,5 +18,4 @@ class Solution:
                 new = sum_n[i] - dd[0]
                 max = new if new>max else max
         return max
-
 print(Solution().FindGreatestSumOfSubArray([2,8,1,5,9]))
