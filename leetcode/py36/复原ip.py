@@ -4,12 +4,17 @@ class Solution:
     def a_cut(self, the_str, now_ip):
         len_str = len(the_str)
         len_now_ip = len(now_ip)
-        if len_now_ip > 4:
+        if len_now_ip > 4 :
             return
-        if len_now_ip == 4 and not the_str:
-            res_str = ''.join(now_ip)
-            res_str = res_str[0:-1]
-            self.res.append(res_str)
+        elif len_now_ip == 4:
+            if not the_str:
+                res_str = ''.join(now_ip)
+                res_str = res_str[0:-1]
+                self.res.append(res_str)
+            else:
+                return
+        elif (len_now_ip<4 and len_str/(4-len_now_ip)> 3):
+            return
         if not len_str:
             return
         elif len_str == 1:
