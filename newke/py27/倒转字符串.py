@@ -4,7 +4,8 @@ class Solution:
         k = k[::-1]
         astr = ""
         for i in k:
-            astr+=i+" "
+            if len(i) > 0:
+                astr += i+" "
         return astr[:-1]
 
-Solution().ReverseSentence("student a am I")
+print([Solution().ReverseSentence("  hello world!  ")])
