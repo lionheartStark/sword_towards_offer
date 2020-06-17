@@ -9,7 +9,6 @@ class Solution:
         while len(xpy) != 1:
             lastidx = (m-1+lastidx) % (len(xpy))
             print(xpy.pop(lastidx))
-        print  xpy
 
 
 Solution().LastRemaining_Solution(5,3)
