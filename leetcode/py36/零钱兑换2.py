@@ -1,7 +1,7 @@
 class Solution:
     def change(self, amount: int, coins: list) -> int:
         len_coin = len(coins)
-        dp = [[0] * (amount + 1)] * (len_coin + 1)
+        dp = [[0 for j in range(amount + 1)] for i in range(len_coin + 1)]
         # dp i,j 表示用前i个凑满j的办法数量
 
         # 凑0我们是总有办法的
@@ -28,6 +28,8 @@ class Solution:
                 # 在原基础上加上一个此类coin
                 dp[x] += dp[x - coin]
         return dp[amount]
+
+
 
 
 print(Solution().change(5, [1, 2, 5]))
