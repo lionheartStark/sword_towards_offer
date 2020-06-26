@@ -5,6 +5,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 class Codec:
 
     def bianli_tree(self, this_layer, tree_list):
@@ -13,7 +14,7 @@ class Codec:
             for i in this_layer:
                 if i is None:
                     tree_list.append(None)
-                    #next_layer.extend([None, None])
+                    # next_layer.extend([None, None])
                 else:
                     tree_list.append(i.val)
                     next_layer.extend([i.left, i.right])
@@ -31,15 +32,14 @@ class Codec:
             return [None]
         return self.bianli_tree([root], tree_list)
 
-
     def make_tree(self, this_layer, data, root):
 
         while len(data):
             next_layer = []
             for i in this_layer:
                 if i:
-                    i.left = TreeNode(data.pop(0)) if data[0]!=None else data.pop(0)
-                    i.right = TreeNode(data.pop(0)) if data[0]!=None else data.pop(0)
+                    i.left = TreeNode(data.pop(0)) if data[0] != None else data.pop(0)
+                    i.right = TreeNode(data.pop(0)) if data[0] != None else data.pop(0)
                     next_layer.extend([i.left, i.right])
                 else:
                     pass
@@ -48,7 +48,8 @@ class Codec:
                     # next_layer.extend([None, None])
             this_layer = next_layer
 
-        return  root
+        return root
+
     def deserialize(self, data):
         """Decodes your encoded data to tree.
 
@@ -64,7 +65,6 @@ class Codec:
             return root
 
 
-
 a = TreeNode(1)
 b = TreeNode(2)
 c = TreeNode(3)
@@ -76,10 +76,10 @@ c.left = d
 c.right = e
 
 codec = Codec()
-#print(codec.serialize(a))
+# print(codec.serialize(a))
 
-tree =(codec.deserialize(codec.serialize(a)))
-tree = codec.deserialize([1,None,2])
+tree = (codec.deserialize(codec.serialize(a)))
+tree = codec.deserialize([1, None, 2])
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.deserialize(codec.serialize(root))
