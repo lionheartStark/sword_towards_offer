@@ -20,7 +20,7 @@ class Solution:
 
 
 
-    def numSubseq(self, nums: list, target: int) -> int:
+    def numSubseq2(self, nums: list, target: int) -> int:
         """
         排序加双指针，best
         """

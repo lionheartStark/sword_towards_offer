@@ -2,7 +2,7 @@ class Solution:
 
     def longestPalindrome(self, s: str) -> str:
         """
-        递归
+        递归会超时间
         """
         lens = len(s)
         if len(s) == 0:
@@ -39,6 +39,9 @@ class Solution:
 
 
     def longestPalindrome(self, s: str) -> str:
+        """
+        斜向遍历
+        """
         n = len(s)
         dp = [[False] * n for _ in range(n)]
         ans = ""
