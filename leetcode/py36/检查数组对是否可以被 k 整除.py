@@ -19,4 +19,5 @@ class Solution:
                     return False
         return True
 
-print(Solution().canArrange(arr = [1,2,3,4,5,6], k = 10))
+print(Solution().canArrange([-1,1,-2,2,-3,3,-4,4], k = 3))
+
