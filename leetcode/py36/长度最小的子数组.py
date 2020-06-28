@@ -35,7 +35,7 @@ class Solution:
 
     def minSubArrayLen_my2p(self, s, nums):
         """
-        [i,j],right
+        [i,j],对的
         """
         i = 0
         j = 0
