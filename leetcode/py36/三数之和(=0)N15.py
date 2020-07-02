@@ -9,14 +9,13 @@ class Solution:
         for i in range(length):
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            left = i+1
+            left = i + 1
             right = length - 1
             while left < right:
                 sum = nums[i] + nums[right] + nums[left]
 
-
                 if sum == 0:
-                    ans.append( [nums[i], nums[left], nums[right]])
+                    ans.append([nums[i], nums[left], nums[right]])
                     while (left < right and nums[left] == nums[left + 1]):
                         left += 1
                     while (left < right and nums[right] == nums[right - 1]):
@@ -26,7 +25,7 @@ class Solution:
 
 
                 elif sum < 0:
-                    while(left < right and nums[left] == nums[left+1]):
+                    while (left < right and nums[left] == nums[left + 1]):
                         left += 1
                     left += 1
                 elif sum > 0:
@@ -64,4 +63,3 @@ class Solution:
                     ans.append([nums[first], nums[second], nums[third]])
 
         return ans
-

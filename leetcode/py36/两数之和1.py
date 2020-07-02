@@ -7,6 +7,7 @@ class Solution:
             j = hashmap.get(target - num)
             if j is not None and i != j:
                 return [i, j]
+
     def twoSum(self, nums, target):
         for i in range(len(nums)):
             want = target - nums[i]
@@ -15,4 +16,4 @@ class Solution:
             else:
                 continue
 
-print(Solution().twoSum([2, 7, 11, 15],9))
+print(Solution().twoSumBest([2, 2],4))
