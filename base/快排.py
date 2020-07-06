@@ -22,15 +22,15 @@ def part(the_list, start, end):
     return i
 
 
-def mt(the_list, start, end):
+def qucik_sort(the_list, start, end):
     if start < end:
         p = part(the_list, start, end)
         print(p)
-        mt(the_list, start, p - 1)
-        mt(the_list, p + 1, end)
+        qucik_sort(the_list, start, p - 1)
+        qucik_sort(the_list, p + 1, end)
 
 
 A = [5, 4, 6, 3, 28, 13]
 print(A)
-mt(A, 0, len(A) - 1)
+qucik_sort(A, 0, len(A) - 1)
 print(A)
