@@ -1,5 +1,4 @@
-
-def bisect_right(a, x, lo=0, hi=None):
+def bisect_left(a, x, lo=0, hi=None):
     """Return the index where to insert item x in list a, assuming a is sorted.
 
     The return value i is such that all e in a[:i] have e < x, and all e in
@@ -16,17 +15,17 @@ def bisect_right(a, x, lo=0, hi=None):
         hi = len(a)
     while lo < hi:
         mid = (lo + hi) // 2
-        if a[mid] > x:
-            hi = mid
-        else:
+        if a[mid] < x:
             lo = mid + 1
+        else:
+            hi = mid
     return lo
 
 
 def twofen_insert_sort(a, n):
     for i in range(1, n):
         if a[i - 1] > a[i]:
-            j = bisect_right(a, a[i], 0, i)
+            j = bisect_left(a, a[i], 0, i)
             shaobing = a[i]
             for k in range(i - 1, j - 1, -1):
                 a[k + 1] = a[k]
