@@ -26,12 +26,13 @@ def twofen_insert_sort(a, n):
     for i in range(1, n):
         if a[i - 1] > a[i]:
             j = bisect_left(a, a[i], 0, i)
+            print(j)
             shaobing = a[i]
             for k in range(i - 1, j - 1, -1):
                 a[k + 1] = a[k]
             a[j] = shaobing
 
 
-a = [1, 2, 3, 2, 1]
+a = [3, 2, 1, 2, 1]
 twofen_insert_sort(a, 5)
 print(a)
