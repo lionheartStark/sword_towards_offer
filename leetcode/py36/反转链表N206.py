@@ -10,6 +10,11 @@ class Solution:
         self.res = None
 
     def reverseList(self, head: ListNode) -> ListNode:
+        """
+        递归
+        :param head:
+        :return:
+        """
         if head.next is None or head is None:
             return head
         else:
@@ -18,6 +23,22 @@ class Solution:
             head.next = None
             return newhead
 
+    def reverseList(self, head: ListNode) -> ListNode:
+        """
+        迭代
+        :param head:
+        :return:
+        """
+        pre = None
+        now = head
 
+        while True:
+            tmp = now.next
+            now.next = pre
+            pre = now
+            if tmp:
+                now = tmp
+            else:
+                return pre
 
 
