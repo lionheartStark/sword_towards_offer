@@ -19,7 +19,7 @@ class Solution:
             nowican = queue.popleft()
             a_solution.append(nowican)
             should_rm = []
-            for k,v in need_map.items():
+            for k, v in need_map.items():
                 if nowican in v:
                     v.remove(nowican)
                     if len(v) == 0:
