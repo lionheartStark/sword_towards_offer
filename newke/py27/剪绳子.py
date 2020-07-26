@@ -27,4 +27,4 @@ class Solution:
         return amax
 
 
-print Solution().cutRope(8)
+print(Solution().cutRope(8))
