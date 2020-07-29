@@ -5,7 +5,6 @@ class ListNode(object):
         self.next = None
 
 
-
 def reverseList( head, pr):
     prev = None
     curr = head
@@ -15,7 +14,6 @@ def reverseList( head, pr):
         prev = curr
         curr = nextTemp
     return prev
-
 
 
 class Solution(object):
