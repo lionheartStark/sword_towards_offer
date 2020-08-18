@@ -1,3 +1,11 @@
+def get_ipt():
+    N, V = list(map(int, input().split()))
+    things = []
+    for i in range(N):
+        a = list(map(int, input().split()))
+        a[0], a[1] = a[1], a[0]
+        things.append(a)
+
 # 2维零一背包,求可装最大
 def packge01_wei2(N, Cap, things):
     dp = [[0 for i in range(Cap + 1)] for j in range(N + 1)]
@@ -50,5 +58,55 @@ def fenzu_package(fenzus, Cap):
     for fenzu in fenzus:
         for w in range(Cap, 0, -1):
             for one_thing in fenzu:
-                dp[w] = max(dp[w], dp[w - one_thing[1]] + one_thing[0])
+                if w -one_thing[1]>=0:
+                    dp[w] = max(dp[w], dp[w - one_thing[1]] + one_thing[0])
     return dp[Cap]
+
+
+
+######## 单个处理函数 ########
+def single_pkg_01(dp, Cap, cost, win):
+    for w in range(Cap, cost - 1, -1):
+        dp[w] = max(dp[w], dp[w - cost] + win)
+
+
+def single_full(dp, Cap, cost, win):
+    for w in range(cost, Cap + 1):
+        dp[w] = max(dp[w], dp[w - cost] + win)
+
+
+def single_muti(dp, Cap, cost, win, num):
+    if cost * num >= Cap:
+        single_full(dp, Cap, cost, win)
+        return
+    k = 1
+    while k < num:
+        single_pkg_01(dp, Cap, cost * k, win * k)
+        num = num - k
+        k *= 2
+    single_pkg_01(dp, Cap, cost * num, win * num)
+
+
+############################################################
+# 混合背包问题
+def mixed_package(N, Cap, things):
+    dp = [0 for i in range(Cap + 1)]
+    for one_thing in things:
+        cost, win, kind = one_thing
+        if kind == -1:
+            single_pkg_01(dp, Cap, cost, win)
+        elif kind == 0:
+            single_full(dp, Cap, cost, win)
+        else:
+            single_muti(dp, Cap, cost, win, kind)
+    return dp[-1]
+
+# 二维费用背包
+def wei2_package_01(N, V, M, things):
+    dp = [[0 for i in range(M+1)] for i in range(V+1)]
+    for one_thing in things:
+        vcost, mcost, win = one_thing
+        for v in range(V, vcost - 1, -1):
+            for m in range(M, mcost - 1, -1):
+                dp[v][m] = max(dp[v][m], dp[v-vcost][m - mcost] + win)
+    return dp[-1][-1]
