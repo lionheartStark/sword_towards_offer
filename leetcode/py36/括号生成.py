@@ -6,12 +6,11 @@ class Solution:
     def __init__(self):
         self.res = []
 
-
     def get(self, stack, now_res, left_rem, right_rem):
         """
         对，但是内存消耗太大了
         """
-        if left_rem == 0 and right_rem ==0:
+        if left_rem == 0 and right_rem == 0:
             self.res.append(now_res)
             return
         else:
@@ -23,10 +22,10 @@ class Solution:
                 if right_rem:
                     new_stack = stack[:]
                     new_stack.pop()
-                    self.get(new_stack, now_res + ')', left_rem, right_rem  - 1)
+                    self.get(new_stack, now_res + ')', left_rem, right_rem - 1)
 
     def generateParenthesis(self, n: int) -> List[str]:
-        self.get([], '', n , n)
+        self.get([], '', n, n)
 
         print(self.res)
         return self.res
@@ -48,5 +47,6 @@ class Solution:
 
         dfs(cur_str, n, n)
         return res
+
 
 Solution().generateParenthesis(3)

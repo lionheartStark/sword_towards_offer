@@ -22,9 +22,9 @@ class Solution:
                     now_path = path + [(x, y)]
                     queue.append((x, y, step + 1, now_path))
                     grid[x][y] = 2
-                    if x == n-1 and y == n-1:
+                    if x == n - 1 and y == n - 1:
                         print(now_path)
-                        return step+1
+                        return step + 1
         return -1
 
 
@@ -33,4 +33,4 @@ i, j, step, path = queue[0]
 path.append((1, 1))
 print(queue)
 
-print(Solution().shortestPathBinaryMatrix([[0,0,0],[1,1,0],[1,1,0]]))
+print(Solution().shortestPathBinaryMatrix([[0, 0, 0], [1, 1, 0], [1, 1, 0]]))

@@ -3,6 +3,7 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+
 class Solution:
     # 翻转一个子链表，并且返回新的头与尾
     def reverse(self, head: ListNode, tail: ListNode):
@@ -36,4 +37,3 @@ class Solution:
             head = tail.next
 
         return hair.next
-

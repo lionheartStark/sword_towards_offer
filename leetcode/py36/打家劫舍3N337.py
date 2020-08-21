@@ -21,10 +21,10 @@ class Solution:
                 dont_use_this_max = 0
 
                 if root.left:
-                    use_this_max += get_max(root.left.left)+get_max(root.left.right)
+                    use_this_max += get_max(root.left.left) + get_max(root.left.right)
                     dont_use_this_max += get_max(root.left)
                 if root.right:
-                    use_this_max += get_max(root.right.left)+get_max(root.right.right)
+                    use_this_max += get_max(root.right.left) + get_max(root.right.right)
                     dont_use_this_max += get_max(root.right)
                 res = max(use_this_max, dont_use_this_max)
                 dp_map[the_hash] = res

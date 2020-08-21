@@ -29,7 +29,7 @@ class Solution(object):
         if n <= 2:
             return max(nums)
 
-        nums1 = nums[:n-1]
+        nums1 = nums[:n - 1]
         max1 = self.rob1(nums1)
         nums2 = nums[1:n]
         max2 = self.rob1(nums2)

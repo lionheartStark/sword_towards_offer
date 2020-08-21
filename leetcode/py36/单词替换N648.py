@@ -2,6 +2,7 @@ from typing import List
 import collections
 import functools
 
+
 class Solution:
     def replaceWords(self, dict: List[str], sentence: str) -> str:
         dict.sort()
@@ -46,5 +47,6 @@ class Solution:
             return cur.get(END, word)
 
         return " ".join(map(replace, sentence.split()))
+
 
 print(Solution().replaceWords(roots=["cat", "bat", "rat"], sentence="the cattle was rattled by the battery"))

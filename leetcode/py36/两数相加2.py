@@ -31,9 +31,10 @@ class Solution:
             num2 = f"{p2.val}" + num2
             p2 = p2.next
 
-        res = self.string2List(str(int(num1)+int(num2)))
+        res = self.string2List(str(int(num1) + int(num2)))
 
         return res
+
 
 a = ListNode(2)
 b = ListNode(4)
@@ -45,4 +46,4 @@ b1 = ListNode(6)
 c1 = ListNode(4)
 a1.next = b1
 b1.next = c1
-print(Solution().addTwoNumbers(a,a1))
+print(Solution().addTwoNumbers(a, a1))

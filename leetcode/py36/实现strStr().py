@@ -27,5 +27,3 @@ class Solution:
             pn = pn - curr_len + 1
 
         return -1
-
-

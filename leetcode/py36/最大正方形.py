@@ -17,4 +17,3 @@ class Solution:
 
         maxSquare = maxSide * maxSide
         return maxSquare
-

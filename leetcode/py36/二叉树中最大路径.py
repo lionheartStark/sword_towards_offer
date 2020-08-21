@@ -13,13 +13,13 @@ class Solution:
         if root.left:
             res_left = self.qiu(root.left)
             if res_left > 0:
-                bilist.append(res_left+root.val)
+                bilist.append(res_left + root.val)
         if root.right:
             res_right = self.qiu(root.right)
             if res_right > 0:
-                bilist.append(res_right+root.val)
+                bilist.append(res_right + root.val)
         if root.left and root.right:
-            bilist.append(res_left+root.val+res_right)
+            bilist.append(res_left + root.val + res_right)
         now_res = max(bilist)
         if root.left and root.right:
             bilist.pop(-1)
@@ -50,5 +50,5 @@ h = TreeNode(4)
 i = TreeNode(1)
 c.right = h
 c.left = g
-h.right =i
+h.right = i
 Solution().maxPathSum(a)

@@ -31,4 +31,5 @@ class Solution:
 
         return self.res
 
-print(Solution().brokenCalc(2,3))
+
+print(Solution().brokenCalc(2, 3))

@@ -21,4 +21,3 @@ class Solution:
         t1.right = self.mergeTrees(t1.right, t2.right)
 
         return t1
-

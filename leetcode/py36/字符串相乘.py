@@ -6,8 +6,8 @@ class Solution:
         lastsum = 0
         for lastnum in num2[::-1]:
             nowji = int(num1) * int(lastnum)
-            nowsum = nowji+lastsum
-            res = f"{nowsum%10}" + res
+            nowsum = nowji + lastsum
+            res = f"{nowsum % 10}" + res
             lastsum = (nowsum - nowsum % 10) // 10
         if lastsum != 0:
             res = str(lastsum) + res
@@ -16,5 +16,4 @@ class Solution:
         return res
 
 
-
-print(Solution().multiply("666","777"))
+print(Solution().multiply("666", "777"))

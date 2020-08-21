@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = None
 
 
-def reverseList( head, pr):
+def reverseList(head, pr):
     prev = None
     curr = head
     while curr:
@@ -27,9 +27,9 @@ class Solution(object):
             return head
 
         else:
-           new_head = self.swapPairs(head.next.next)
+            new_head = self.swapPairs(head.next.next)
 
-           p = head.next
-           head.next.next = head
-           head.next = new_head
-           return p
+            p = head.next
+            head.next.next = head
+            head.next = new_head
+            return p

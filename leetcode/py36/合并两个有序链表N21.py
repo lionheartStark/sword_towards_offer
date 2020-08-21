@@ -4,13 +4,13 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         p1 = l1
         p2 = l2
         head = ListNode()
         p3 = head
-
 
         while p1 and p2:
             if p1.val < p2.val:

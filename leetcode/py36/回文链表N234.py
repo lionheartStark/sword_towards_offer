@@ -48,7 +48,7 @@ class Solution:
             return True
 
 
-a_list = [1,2]
+a_list = [1, 2]
 head = ListNode(0)
 p = head
 for i in a_list:

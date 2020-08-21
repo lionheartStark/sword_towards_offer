@@ -1,5 +1,7 @@
 from typing import List
 import collections
+
+
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         """
@@ -17,4 +19,6 @@ class Solution:
                 need_extend = [k] * min(count_1[k], count_2[k])
                 res.extend(need_extend)
         return res
-print(Solution().intersect(nums1 = [4,9,5], nums2 = [9,4,9,8,4]))
+
+
+print(Solution().intersect(nums1=[4, 9, 5], nums2=[9, 4, 9, 8, 4]))

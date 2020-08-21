@@ -1,4 +1,6 @@
 import math
+
+
 class MinStack:
     def __init__(self):
         self.stack = []
@@ -17,4 +19,3 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.min_stack[-1]
-

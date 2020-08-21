@@ -12,6 +12,7 @@ class Solution:
         leny = len(dungeon[0])
         self.res = float('INF')
         memo = {}
+
         def dfs(x, y, life, sum_own):
             if sum_own >= self.res:
                 return
@@ -26,11 +27,11 @@ class Solution:
             if x == lenx - 1 and y == leny - 1:
                 self.res = min(self.res, sum_own)
             else:
-                if (x+1, y) in memo and sum_own >= memo[(x+1, y)]:
+                if (x + 1, y) in memo and sum_own >= memo[(x + 1, y)]:
                     pass
                 else:
                     dfs(x + 1, y, now_life, sum_own)
-                    memo[(x+1, y)] = sum_own
+                    memo[(x + 1, y)] = sum_own
 
                 if (x, y + 1) in memo and sum_own >= memo[(x, y + 1)]:
                     pass
@@ -59,6 +60,8 @@ class Solution:
 
         dfs(0, 0, 1, 0)
         return 1 + self.res
+
+
 a = [[-2, -3, 3],
      [-5, -10, 1],
      [10, 30, -5]]

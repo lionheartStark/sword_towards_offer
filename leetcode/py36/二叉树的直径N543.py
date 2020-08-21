@@ -27,5 +27,4 @@ class Solution:
         else:
             self.count_deep(root)
 
-        return self.res-1
-
+        return self.res - 1

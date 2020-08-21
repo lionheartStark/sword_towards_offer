@@ -7,7 +7,7 @@ class Solution:
 
         res = ""
         while k > 0 and num:
-            want = min(num[0:k+1]) if k+1 <= n else min(num)
+            want = min(num[0:k + 1]) if k + 1 <= n else min(num)
             find_idx = num.index(want)
             res = res + want
             #
@@ -15,12 +15,9 @@ class Solution:
 
             k -= find_idx
 
-
         for i in num:
             res = res + i
         return res
 
 
-
-
-print(Solution().minInteger_use_dict(num = "4321", k = 4))
+print(Solution().minInteger_use_dict(num="4321", k=4))

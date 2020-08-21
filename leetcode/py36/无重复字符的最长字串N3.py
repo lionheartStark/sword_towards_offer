@@ -20,5 +20,6 @@ class Solution:
                 start += 1
             return res
 
+
 ans = Solution().lengthOfLongestSubstring("bbbbbfgk")
 print(ans)

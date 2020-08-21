@@ -40,5 +40,3 @@ class Solution:
                 now = tmp
             else:
                 return pre
-
-

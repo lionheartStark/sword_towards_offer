@@ -5,8 +5,9 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
-    def invertTree(self, root: TreeNode) -> TreeNode:# Definition for a binary tree node.
+    def invertTree(self, root: TreeNode) -> TreeNode:  # Definition for a binary tree node.
         if root == None:
             return None
         else:

@@ -4,14 +4,14 @@ class Solution:
         N = len(A)
         maxleft = A[0]
 
-        m = A[N-1]
-        minright = [None] *N
+        m = A[N - 1]
+        minright = [None] * N
         for i in range(N - 1, -1, -1):
             m = min(m, A[i])
             minright[i] = m
 
         for i in range(1, len(A)):
-            maxleft = max(maxleft, A[i-1])
+            maxleft = max(maxleft, A[i - 1])
 
             if maxleft <= minright[i]:
                 return i
@@ -31,6 +31,7 @@ class Solution:
             else:
                 go_max = max(go_max, A[i])
 
-        return huafen+1
+        return huafen + 1
+
 
 print(Solution().partitionDisjoint_best([5, 0, 3, 8, 6]))

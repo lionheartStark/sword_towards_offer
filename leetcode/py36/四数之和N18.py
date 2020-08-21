@@ -53,7 +53,7 @@ class Solution:
                 sum2_target = sum3_target - b
                 # 开始求俩数和
                 end = n - 1
-                for start in range(j +1, n):
+                for start in range(j + 1, n):
                     if start > j + 1 and nums[start] == nums[start - 1]:
                         continue
 
@@ -67,5 +67,6 @@ class Solution:
                             res.append([a, b, nums[start], nums[end]])
         return res
 
-nums =[1, 0, -1, 0, -2, 2]
+
+nums = [1, 0, -1, 0, -2, 2]
 print(Solution().fourSum(nums, 0))

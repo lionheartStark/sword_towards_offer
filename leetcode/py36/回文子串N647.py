@@ -18,11 +18,12 @@ class Solution:
                     dp[i][j] = 1 if s[i] == s[j] else 0
                 else:
                     if s[i] == s[j]:
-                        dp[i][j] = dp[i+1][j-1]
+                        dp[i][j] = dp[i + 1][j - 1]
         ans = 0
         for i in dp:
             ans += sum(i)
         return ans
+
 
 ans = Solution().countSubstrings("aaa")
 print(ans)

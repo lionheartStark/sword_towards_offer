@@ -11,11 +11,12 @@ class Solution:
             print(nowstr)
             self.count += 1
         else:
-            self.in_them(num[1:], nowstr+[num[0:1]])
-            if int(num[0:2])<= 25:
-                self.in_them(num[2:], nowstr+[num[0:2]])
+            self.in_them(num[1:], nowstr + [num[0:1]])
+            if int(num[0:2]) <= 25:
+                self.in_them(num[2:], nowstr + [num[0:2]])
+
     def translateNum(self, num: int) -> int:
-        self.in_them(str(num),[])
+        self.in_them(str(num), [])
         return self.count
 
     def translateNum(self, num: int) -> int:
@@ -30,4 +31,6 @@ class Solution:
             else:
                 dp[i] = dp[i - 1] + (dp[i - 2] if 9 < int(string[i - 1:i + 1]) < 26 else 0)
         return dp[-1]
+
+
 print(Solution().translateNum(12258))

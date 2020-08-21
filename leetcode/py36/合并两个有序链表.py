@@ -38,7 +38,6 @@ class Solution(object):
 l1 = None
 l2 = ListNode(0)
 
-
 d = Solution().mergeTwoLists(l1, l2)
 
 print(d)

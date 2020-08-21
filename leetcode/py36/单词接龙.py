@@ -1,4 +1,6 @@
 import string
+
+
 class Solution:
     def __init__(self):
         self.keylist = {}
@@ -18,7 +20,7 @@ class Solution:
         #     else:
         #         self.can_trans_map[f"{left}_{right}"] = None
         #         return None
-        theset =set()
+        theset = set()
         left_list = list(left)
         for j in range(len(left)):
 
@@ -35,7 +37,7 @@ class Solution:
         return theset
 
     def find_xulie(self, key, nowlist):
-        anowlist = nowlist[:] +[key]
+        anowlist = nowlist[:] + [key]
         if self.end in anowlist:
             self.res.append(anowlist)
         else:
@@ -43,9 +45,8 @@ class Solution:
                 for i in self.keylist[key]:
                     self.find_xulie(i, anowlist)
 
-
     def findLadders(self, beginWord: str, endWord: str, wordList: [str]) -> [[str]]:
-        #wordList = [TreeNode(i) for i in (set(wordList)-set(beginWord))]
+        # wordList = [TreeNode(i) for i in (set(wordList)-set(beginWord))]
         self.end = endWord
         wordList = set(wordList)
         can_remove = {beginWord}
@@ -55,7 +56,7 @@ class Solution:
 
         while True:
 
-            wordList = wordList -can_remove
+            wordList = wordList - can_remove
 
             can_remove = set()
             for j in thislayer:
@@ -69,7 +70,7 @@ class Solution:
                     if endWord in a:
                         self.find = True
                 self.keylist[j] = self.keylist[j] | set(j_kid)
-                can_remove = can_remove|(j_kid)
+                can_remove = can_remove | (j_kid)
 
             thislayer = can_remove
             if not thislayer or endWord in thislayer:
@@ -81,8 +82,7 @@ class Solution:
             return self.res
 
 
-
-#print(Solution().can_trans("dog","lkg"))
+# print(Solution().can_trans("dog","lkg"))
 print(Solution().findLadders(
-"hit","cog",["hot","dot","dog","lot","log","cog"]
+    "hit", "cog", ["hot", "dot", "dog", "lot", "log", "cog"]
 ))

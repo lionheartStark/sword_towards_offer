@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
     def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
         n = len(arr)
@@ -14,4 +16,5 @@ class Solution:
                 return False
         return True
 
-print(Solution().canMakeArithmeticProgression([1,2,4]))
+
+print(Solution().canMakeArithmeticProgression([1, 2, 4]))

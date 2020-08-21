@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
 
     def get_pailie(self, now, nums):
@@ -6,17 +8,16 @@ class Solution:
             self.res.append(now)
         else:
             for i in nums:
-                new_nums= nums[:]
+                new_nums = nums[:]
                 new_nums.remove(i)
-                self.get_pailie(now+[i], new_nums)
+                self.get_pailie(now + [i], new_nums)
 
     def mypermute(self, nums: List[int]) -> List[List[int]]:
-       self.res = []
+        self.res = []
 
-       self.get_pailie([], nums)
+        self.get_pailie([], nums)
 
-       return self.res
-
+        return self.res
 
     def permute(self, nums):
         """
@@ -42,5 +43,4 @@ class Solution:
         return res
 
 
-
-print(Solution().permute([1,2,3]))
+print(Solution().permute([1, 2, 3]))

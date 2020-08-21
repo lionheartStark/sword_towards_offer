@@ -23,8 +23,9 @@ class Solution:
         res = ''
         for i in word_list:
             for j in i:
-                res = res+j
+                res = res + j
         return res
 
+
 print(Solution().convert("ABC"
-, 2))
+                         , 2))

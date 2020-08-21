@@ -1,5 +1,7 @@
 from typing import List
 from collections import defaultdict
+
+
 class Solution:
     def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
         map_count = defaultdict(int)
@@ -17,7 +19,7 @@ class Solution:
                 k -= val
             else:
                 break
-        return len(a2)-count
+        return len(a2) - count
 
     def findLeastNumOfUniqueInts1(self, arr: List[int], k: int) -> int:
         import collections
@@ -30,4 +32,5 @@ class Solution:
                 return len(sort_val) - index
         return 0
 
-print(Solution().findLeastNumOfUniqueInts(arr = [2,1,1,3,3,3], k = 3))
+
+print(Solution().findLeastNumOfUniqueInts(arr=[2, 1, 1, 3, 3, 3], k=3))

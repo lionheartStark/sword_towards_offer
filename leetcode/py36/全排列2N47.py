@@ -56,7 +56,7 @@ class Solution:
 
         dfs(nums, [])
         return self.res
-    
+
 
 import pprint
 

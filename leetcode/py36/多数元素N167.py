@@ -1,6 +1,7 @@
 from collections import Counter
 from typing import List
 
+
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         count = Counter(nums)
@@ -12,8 +13,8 @@ class Solution:
                 max_key = i
         return max_key
 
+
 class Solution:
     def majorityElement(self, nums):
         counts = collections.Counter(nums)
         return max(counts.keys(), key=counts.get)
-

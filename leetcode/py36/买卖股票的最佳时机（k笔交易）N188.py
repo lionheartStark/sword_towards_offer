@@ -52,6 +52,7 @@ class Solution:
                 pre = now
             return pre[0]
 
+
         dp = [[[0, 0] for _ in range(k + 1)] for _ in range(n)]
 
         for i in range(0, n):

@@ -1,9 +1,11 @@
 from typing import List
+
+
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         n = len(nums)
         for i in range(n):
-            if nums[i] == i+1:
+            if nums[i] == i + 1:
                 nums[i] = -nums[i]
             else:
                 # 补位写法也是对的
@@ -28,9 +30,10 @@ class Solution:
         res = []
         for i in range(n):
             if nums[i] > 0:
-                res.append(i+1)
+                res.append(i + 1)
         print(nums)
         print(res)
         return res
 
-Solution().findDisappearedNumbers([2,1])
+
+Solution().findDisappearedNumbers([2, 1])

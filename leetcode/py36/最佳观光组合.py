@@ -11,14 +11,12 @@ class Solution:
         print(max)
         return max
 
-
     def maxScoreSightseeingPairbest(self, A: list) -> int:
         ans, Ai_i = 0, A[0]  # Ai_i == max{0<=i<j |(A[i]+i) }
         for j, a in enumerate(A[1:], 1):  # j ∈ [1,A.length)
             ans = max(ans, Ai_i + a - j)  # (A[i]+i)+(A[j]-j)
             Ai_i = max(Ai_i, a + j)  # Update (A[i]+i) to keep max.
         return ans
-
 
     def maxScoreSightseeingPair(self, A: list) -> int:
         """
@@ -36,9 +34,11 @@ class Solution:
         """
         ans, Ai_i = 0, A[0]
         for j in range(1, len(A)):
-            ans = max(ans, Ai_i+A[j]-j)
+            ans = max(ans, Ai_i + A[j] - j)
             Ai_i = max(Ai_i, A[j] + j)
         return ans
+
+
 a = [8, 1, 5, 2, 6]
 
 Solution().maxScoreSightseeingPair(a)

@@ -1,11 +1,13 @@
 import math
+
+
 class Solution:
     def lastSubstring(self, s: str) -> str:
         stack = ""
         j = 0
         for i in s:
             if stack == "":
-                stack= i
+                stack = i
             else:
                 if i > stack[0]:
                     stack = i
@@ -19,7 +21,7 @@ class Solution:
                             j = 0
                     else:
                         stack += i
-                        j = len(stack)-1
+                        j = len(stack) - 1
                 else:
                     stack += i
                     if j:
@@ -30,5 +32,6 @@ class Solution:
 
         print(stack)
         return stack
+
 
 Solution().lastSubstring("zzzwzzzz")

@@ -2,6 +2,7 @@ class Solution(object):
     """
     不可以抢相邻
     """
+
     def rob(self, nums):
         """
         :type nums: List[int]

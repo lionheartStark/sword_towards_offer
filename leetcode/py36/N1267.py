@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
     def countServers(self, grid: List[List[int]]) -> int:
         x, y = len(grid), len(grid[0])
