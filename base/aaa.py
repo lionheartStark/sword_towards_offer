@@ -1,29 +1,14 @@
-N, V = list(map(int, input().split()))
-things = []
+a = [36, 5, 12, 9, 21]
+from functools import cmp_to_key
 
-for i in range(N):
-    a = list(map(int, input().split()))
-    a[0], a[1] = a[1], a[0]
-    get, cost, amount = a
-    c = 1
-    while amount - c > 0:
-        amount -= c
-        things.append([get * c, cost * c])
-        c = c * 2
-    things.append([get * amount, cost * amount])
+def reversed_cmp(x, y):
+    if x > y:
+        return -1
+    if x < y:
+        return 1
+    return 0
 
+print(cmp_to_key(reversed_cmp))
 
-def packge01_wei1(N, Cap, things):
-    dp = [0 for i in range(Cap + 1)]
-    for i in range(1, N + 1):
-        for w in range(Cap, things[i - 1][1] - 1, -1):
-            dp[w] = max(dp[w], dp[w - things[i - 1][1]] + things[i - 1][0])
-    return dp[Cap]
-
-
-def muti_packge(N, Cap, things):
-    return packge01_wei1(len(things), Cap, things)
-
-
-ans = muti_packge(N, V, things)
-print(ans)
+m = sorted([36, 5, 12, 9, 21], key=cmp_to_key(reversed_cmp))
+print(m)
